@@ -8,12 +8,12 @@ var app = new Vue({
 	el: "#app",
 	data: {
 		tweetData: [],
-		hashtag: "puppies"
+		hashtag: "#puppies"
 	},
 	created: function created() {
 		var _this = this;
 
-		axios.get(TWITTER_SEARCH_URL + "bacon").then(function (response) {
+		axios.get(TWITTER_SEARCH_URL + encodeURIComponent(this.hashtag)).then(function (response) {
 			console.log("twitter said", response.data.statuses);
 			_this.tweetData = response.data.statuses;
 		}).catch(function (error) {

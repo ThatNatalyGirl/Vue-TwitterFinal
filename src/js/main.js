@@ -7,10 +7,10 @@ let app = new Vue({
 	el: "#app",
 	data: {
 		tweetData:[],
-		hashtag: "puppies"
+		hashtag: "#puppies"
 	},
 	created: function() {
-		axios.get(TWITTER_SEARCH_URL + "bacon")
+		axios.get(TWITTER_SEARCH_URL + encodeURIComponent(this.hashtag))
 		.then((response) =>{
 			console.log("twitter said", response.data.statuses)
 			this.tweetData = response.data.statuses;

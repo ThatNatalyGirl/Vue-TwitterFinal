@@ -16,10 +16,12 @@ console.log('status-bar')
 
 // console.log('status-bar')
 Vue.component('status-bar', {
-	props: ["hashtag"],
+	props: [
+		"hashtag", 
+		"tweetData"
+	],
 	data: function () {
 		return {
-			
 		}
 	},
 	template: `
@@ -30,3 +32,4 @@ Vue.component('status-bar', {
 })
 
 // :status-bar="statusBar"
+	// <div>{{tweet-data}}</div>

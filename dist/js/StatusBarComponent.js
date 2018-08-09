@@ -18,7 +18,7 @@ console.log('status-bar');
 
 // console.log('status-bar')
 Vue.component('status-bar', {
-	props: ["hashtag"],
+	props: ["hashtag", "tweetData"],
 	data: function data() {
 		return {};
 	},
@@ -26,4 +26,5 @@ Vue.component('status-bar', {
 });
 
 // :status-bar="statusBar"
+// <div>{{tweet-data}}</div>
 //# sourceMappingURL=StatusBarComponent.js.map
