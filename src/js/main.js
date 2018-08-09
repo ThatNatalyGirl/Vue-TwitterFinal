@@ -6,7 +6,7 @@ const TWITTER_SEARCH_URL = "http://circuslabs.net/~chris.silich/twitter-proxy/tw
 let app = new Vue({
 	el: "#app",
 	data: {
-		tweetData:[]
+		tweetData:[],
 		hashtag: "puppies"
 	},
 	created: function() {

@@ -14,21 +14,16 @@
 
 console.log('hashtag-input')
 Vue.component('hashtag-input', {
-	props: {
-		type: string
-		default: "#cats"
-	}
-	data: function () {
-		if 'hashtag-input'.value {
-			return 'input.value'
-		}
-		else {
-			return #puppies
-		}
+	props: [
+		"hashtag"
+	],
+	data: function() {
+		return {}
 	},
 	template: `
 		<div>
-			Showing 13 tweets containing 
+			<input name="hashtag" type="text" :value="hashtag">
+			<button>Go</button>
 		</div>
 	`
 })

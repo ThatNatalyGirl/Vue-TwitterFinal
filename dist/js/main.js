@@ -7,7 +7,8 @@ var TWITTER_SEARCH_URL = "http://circuslabs.net/~chris.silich/twitter-proxy/twit
 var app = new Vue({
 	el: "#app",
 	data: {
-		tweetData: []
+		tweetData: [],
+		hashtag: "puppies"
 	},
 	created: function created() {
 		var _this = this;
@@ -19,6 +20,9 @@ var app = new Vue({
 			console.warn("Oh noes!", error);
 		});
 	},
+	// function(){
+	// 	this.hashtag = "cat" 
+	// },
 	methods: {}
 });
 

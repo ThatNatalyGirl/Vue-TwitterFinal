@@ -13,9 +13,8 @@
 	<body>
 		
 		<div id="app">
-			<!-- <hashtag-input></hashtag-input> -->
-			<hashtag-input v-bind:status-bar="statusBar"></hashtag-input>
-			<status-bar v-bind:tweet-data="tweetData"></status-bar>
+			<hashtag-input v-bind:hashtag="hashtag"></hashtag-input>
+			<status-bar v-bind:hashtag="hashtag" v-bind:tweet-data="tweetData"></status-bar>
 			<tweet-feed v-bind:tweet-data="tweetData"></tweet-feed>
 		</div>
 

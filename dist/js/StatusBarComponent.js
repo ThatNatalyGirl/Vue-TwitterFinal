@@ -18,11 +18,11 @@ console.log('status-bar');
 
 // console.log('status-bar')
 Vue.component('status-bar', {
-	props: ["statuBar"],
+	props: ["hashtag"],
 	data: function data() {
 		return {};
 	},
-	template: '\n\t\t<div>\n\t\t\t<input name="hashtag" type="text">\n\t\t\t<button>Go</button>\n\t\t</div>\n\t'
+	template: '\n\t\t<div>\n\t\t\tShowing 13 tweets containing {{hashtag}}\n\t\t</div>\n\t'
 });
 
 // :status-bar="statusBar"

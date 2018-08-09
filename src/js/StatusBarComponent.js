@@ -16,7 +16,7 @@ console.log('status-bar')
 
 // console.log('status-bar')
 Vue.component('status-bar', {
-	props: ["statuBar"],
+	props: ["hashtag"],
 	data: function () {
 		return {
 			
@@ -24,8 +24,7 @@ Vue.component('status-bar', {
 	},
 	template: `
 		<div>
-			<input name="hashtag" type="text">
-			<button>Go</button>
+			Showing 13 tweets containing {{hashtag}}
 		</div>
 	`
 })
