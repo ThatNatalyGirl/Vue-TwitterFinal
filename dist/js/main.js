@@ -8,22 +8,33 @@ var app = new Vue({
 	el: "#app",
 	data: {
 		tweetData: [],
-		hashtag: "#puppies"
+		hashtag: "#yourHashtagHere"
+	},
+	watch: {
+		hashtag: function hashtag() {
+			console.log("OMG I changed");
+			this.doTwitterSearch();
+		}
 	},
 	created: function created() {
-		var _this = this;
-
-		axios.get(TWITTER_SEARCH_URL + encodeURIComponent(this.hashtag)).then(function (response) {
-			console.log("twitter said", response.data.statuses);
-			_this.tweetData = response.data.statuses;
-		}).catch(function (error) {
-			console.warn("Oh noes!", error);
-		});
+		this.doTwitterSearch();
 	},
-	// function(){
-	// 	this.hashtag = "cat" 
-	// },
-	methods: {}
+	methods: {
+		newHashtagRecievedFromChildComponent: function newHashtagRecievedFromChildComponent(newHashtag) {
+			console.log("I heard", newHashtag);
+			this.hashtag = newHashtag;
+		},
+		doTwitterSearch: function doTwitterSearch() {
+			var _this = this;
+
+			axios.get(TWITTER_SEARCH_URL + encodeURIComponent(this.hashtag)).then(function (response) {
+				console.log("twitter said", response.data.statuses);
+				_this.tweetData = response.data.statuses;
+			}).catch(function (error) {
+				console.warn("Oh noes!", error);
+			});
+		}
+	}
 });
 
 ///Note. To use 'this' in Axios call, we have to use arrow functions so that 'this' does not get redefined by axios

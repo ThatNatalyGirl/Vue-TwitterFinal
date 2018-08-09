@@ -7,23 +7,32 @@ let app = new Vue({
 	el: "#app",
 	data: {
 		tweetData:[],
-		hashtag: "#puppies"
+		hashtag: "#yourHashtagHere"
+	},
+	watch: {
+		hashtag: function(){
+		console.log("OMG I changed")
+		this.doTwitterSearch()
+		}
 	},
 	created: function() {
-		axios.get(TWITTER_SEARCH_URL + encodeURIComponent(this.hashtag))
-		.then((response) =>{
-			console.log("twitter said", response.data.statuses)
-			this.tweetData = response.data.statuses;
-		})
-		.catch((error) =>{
-			console.warn("Oh noes!", error)
-		})
+		this.doTwitterSearch()
 	},
-	// function(){
-	// 	this.hashtag = "cat" 
-	// },
 	methods:{
-
+		newHashtagRecievedFromChildComponent: function(newHashtag){
+			console.log("I heard", newHashtag)
+			this.hashtag = newHashtag;
+		},
+		doTwitterSearch: function(){
+			axios.get(TWITTER_SEARCH_URL + encodeURIComponent(this.hashtag))
+			.then((response) =>{
+				console.log("twitter said", response.data.statuses)
+				this.tweetData = response.data.statuses;
+			})
+			.catch((error) =>{
+				console.warn("Oh noes!", error)
+			})
+		}
 	}
 });
 

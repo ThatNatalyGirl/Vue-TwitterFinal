@@ -13,9 +13,16 @@
 	<body>
 		
 		<div id="app">
-			<hashtag-input v-bind:hashtag="hashtag"></hashtag-input>
-			<status-bar v-bind:hashtag="hashtag" v-bind:tweet-data="tweetData"></status-bar>
-			<tweet-feed v-bind:tweet-data="tweetData"></tweet-feed>
+			<hashtag-input 
+				v-on:usertypeshashtag="newHashtagRecievedFromChildComponent" v-bind:default-hashtag="hashtag">		
+			</hashtag-input>
+			<status-bar 
+				v-bind:hashtag="hashtag" 
+				v-bind:tweet-data="tweetData">
+			</status-bar>
+			<tweet-feed 
+				v-bind:tweet-data="tweetData">
+			</tweet-feed>
 		</div>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
