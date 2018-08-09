@@ -1,10 +1,9 @@
 console.log('tweet')
 
 Vue.component('tweet', {
-	props: ["tweet-object"]
-	data: function () {
-		return { 	
-		}
+	props: ["tweet-object"],
+	data: function() {
+		return {}
 	},
 	template: `
 		<div>
