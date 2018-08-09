@@ -1,0 +1,19 @@
+/* 0. Reset ================================= */
+@import 'reset';
+
+/* 1. Main Layout ================================= */
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	background: #ccc;	
+}
+
+/* 2. Content ================================= */
+
+input[name="hashtag"]{
+	font-size: 3em;
+	width: 100%;
+}
