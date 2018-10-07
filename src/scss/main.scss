@@ -8,12 +8,28 @@
 }
 
 body{
-	background: #ccc;	
+	background: aquamarine;	
+	height: 100%;
+	width: 90%;
+	margin: 10px 5%;
+	font-family: 'Fahkwang', sans-serif;
 }
 
 /* 2. Content ================================= */
 
+h1{
+	font-size: 2em;
+	margin: 0 0 30px;
+	text-align: center;
+	color: blue;
+}
+
 input[name="hashtag"]{
 	font-size: 3em;
 	width: 100%;
+	font-family: 'Fahkwang', sans-serif;
 }
+
+
+
+
